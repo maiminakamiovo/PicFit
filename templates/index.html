@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Image Resizer</h1>
-    <form id="upload-form" action="/" method="POST" enctype="multipart/form-data" target="hidden-form">
+    <form action="/" method="POST" enctype="multipart/form-data">
         <label for="images">Upload Images:</label>
         <input type="file" id="images" name="images" accept="image/*" multiple required><br><br>
         
@@ -22,7 +22,5 @@
         
         <button type="submit">Resize Images</button>
     </form>
-    
-    <iframe id="hidden-form" name="hidden-form" style="display:none;"></iframe>
 </body>
 </html>

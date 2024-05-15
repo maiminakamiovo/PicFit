@@ -1,7 +1,6 @@
-from flask import Flask, render_template, request, send_file
+from flask import Flask, request, send_file, render_template
 from PIL import Image
 import io
-import os
 import zipfile
 
 app = Flask(__name__)
@@ -37,7 +36,6 @@ def index():
                 download_name=uploaded_image.filename,
                 mimetype="image/png",
             )
-
         else:
             # 如果有多个文件，将它们打包成一个 ZIP 文件并下载
             output_zip = io.BytesIO()
@@ -62,11 +60,6 @@ def index():
             )
 
     return render_template("index.html")
-
-
-@app.route("/download")
-def download():
-    return render_template("download.html")
 
 
 if __name__ == "__main__":
